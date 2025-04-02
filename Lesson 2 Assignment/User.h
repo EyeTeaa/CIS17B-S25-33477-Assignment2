@@ -13,21 +13,25 @@ private:
 
 	std::string name; 
 	int userID; 
-	std::vector<Book> borrowedBooks; 
+	std::vector<Book*> borrowedBooks; 
 
 public: 
 	//constructor 
-	User(std::string name, std::vector<Book> borrowedBooks); 
+	User(std::string name, std::vector<Book*> borrowedBooks); 
 
 	//accessors 
 	std::string getName(); 
 	int getUserID(); 
-	std::vector<Book> getBorrowedBooks(); 
+	std::vector<Book*> getBorrowedBooks(); 
+	static int getIDGENERATOR(); 
+
 
 	//mutators 
 	void setName(std::string name); 
 	void setUserID(int userID); 
-	void setBorrowedBooks(std::vector<Book> borrowedBooks);
+	void addBorrowedBook(Book* book); 
+	void removeBorrowedBook(Book* book); 
+	void setBorrowedBooks(std::vector<Book*> borrowedBooks);
 
 };
 
